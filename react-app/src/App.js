@@ -3,25 +3,27 @@ import React, { Component } from 'react';
 const App = () => (<Counter></Counter>);
 class Counter extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       count: 0
-    }
+    };
+    this.handleMinusButton = this.handleMinusButton.bind(this); // アロー関数を使わずにthisをbind
   }
   handlePlusButton = () => {
-    const currentCount = this.state.count;
-    this.setState({
-      count: currentCount + 1
-    });
+    this.setState({ count: this.state.count + 1 });
+  }
+  handleMinusButton() {
+    this.setState({ count: this.state.count - 1 });
   }
   render() {
     return (
       <React.Fragment>
         <div>counter : {this.state.count}</div>
         <button onClick={this.handlePlusButton}>+1</button>
-        <button>-1</button>
+        <button onClick={this.handleMinusButton}>-1</button>
       </React.Fragment>
     );
   }
+
 }
 export default App;
