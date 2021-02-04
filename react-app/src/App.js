@@ -1,5 +1,6 @@
 import React from 'react';
 
+// クラスComponent　→　stateを持たせたい時、callback関数を使いたい時に使用
 // class App extends Component {
 //   render() {
 //     return (
@@ -11,6 +12,7 @@ import React from 'react';
 //   }
 // }
 
+// ファンクショナルComponent　→　クラスComponentでなくて良い場合は優先的使用を検討
 const App = () => {
   return (
     <div>
